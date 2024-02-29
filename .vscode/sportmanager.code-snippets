@@ -1,0 +1,69 @@
+{
+  "ImoblesDevs create classNames module.css": {
+    "scope": "javascript,typescript, typescriptreact",
+    "prefix": "im:className",
+    "body": ["className={styles.$1}"],
+    "description": "Create className module.css"
+  },
+  "ImoblesDevs create Component": {
+    "scope": "javascript, typescript, typescriptreact",
+    "prefix": "im:component",
+    "body": [
+      "import React from 'react';",
+      "",
+      "import styles from './styles.module.css'",
+      "",
+      "function ${4:ComponentName}() {",
+      "  return (",
+      "    $5",
+      "  )",
+      "}",
+      "",
+      "export default React.memo(${4:ComponentName})"
+    ],
+    "description": "Create a new unconnected component/view"
+  },
+  "New Stories from StoryBook": {
+    "scope": "mdx",
+    "prefix": "!ns",
+    "description": "Create a new Stories for StoryBook 📕",
+    "body": [
+      "import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';",
+      "import $1 from '../';",
+      "",
+      "<Meta title=\"components/$2\" component={$3} />",
+      "",
+      "# $4",
+      "",
+      "Texto",
+      "",
+      "<Canvas>",
+      "  <Story name=\"Default\">{(args) => <$5 {...args} />}</Story>",
+      "</Canvas>",
+      "",
+      "<ArgsTable of={$6} />"
+    ]
+  },
+  "newTest": {
+    "scope": "javascript,typescript,typescriptreact",
+    "prefix": "!nt",
+    "description": "Snippet to create the basis of a test 🧪",
+    "body": [
+      "import { render, screen, cleanup } from '@testing-library/react';",
+      "",
+      "describe(`$1`, () => {",
+      "  afterAll(() => {",
+      "    jest.clearAllMocks();",
+      "  });",
+      "",
+      "  afterEach(() => {",
+      "    cleanup();",
+      "    jest.resetAllMocks();",
+      "  });",
+      "",
+      "  test(`$2`, () => {$3});",
+      "});",
+      ""
+    ]
+  }
+}
