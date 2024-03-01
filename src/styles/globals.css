@@ -1,0 +1,115 @@
+:root {
+  --yellow: #ffe600;
+  --blue: #3483fa;
+  --gray-1: #eeeeee;
+  --gray-2: #999999;
+  --gray-3: #666666;
+  --gray-4: #333333;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: var(--font-inter);
+  color: var(--text);
+}
+
+body {
+  scrollbar-width: thin;
+  background: var(--white);
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+  background: var(--gray-1);
+}
+
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  color: var(--text);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+input,
+select,
+textarea {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-inter);
+}
+
+img,
+video {
+  height: auto;
+  max-width: 100%;
+}
+
+iframe,
+hr {
+  border: 0;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+}
