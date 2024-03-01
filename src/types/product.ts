@@ -32,7 +32,7 @@ export interface ProductProps {
   internationalDeliveryMode: string;
   sellerAddress: SellerAddressProps;
   sellerContact: null;
-  location: {};
+  // location: {};
   coverageAreas: [];
   attributes: Attribute[];
   listingSource: string;

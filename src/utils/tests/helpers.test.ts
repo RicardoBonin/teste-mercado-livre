@@ -1,7 +1,8 @@
-import { render, screen, cleanup } from '@testing-library/react';
+import { cleanup } from '@testing-library/react';
+
 import { getUserAgentReduxState, objectToQueryString } from '../helpers';
 
-describe(`Helpers`, () => {
+describe('Helpers', () => {
   afterAll(() => {
     jest.clearAllMocks();
   });
@@ -11,9 +12,10 @@ describe(`Helpers`, () => {
     jest.resetAllMocks();
   });
 
-  describe(`getUserAgentReduxState`, () => {
-    test(`when is a userAgent from a desktop device should return desktop correct object`, () => {
-      const desktopUserAgent = `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36`;
+  describe('getUserAgentReduxState', () => {
+    test('when is a userAgent from a desktop device should return desktop correct object', () => {
+      const desktopUserAgent =
+        'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36';
       const expectedObject = {
         userAgent: desktopUserAgent,
         devices: { isMobile: false, isTablet: false, isDesktop: true },
@@ -24,8 +26,9 @@ describe(`Helpers`, () => {
       );
     });
 
-    test(`when is a userAgent from a tablet device should return tablet correct object`, () => {
-      const tabletUserAgent = `Mozilla/5.0 (iPad; CPU OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/87.0.4280.77 Mobile/15E148 Safari/604.1`;
+    test('when is a userAgent from a tablet device should return tablet correct object', () => {
+      const tabletUserAgent =
+        'Mozilla/5.0 (iPad; CPU OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/87.0.4280.77 Mobile/15E148 Safari/604.1';
       const expectedObject = {
         userAgent: tabletUserAgent,
         devices: { isMobile: false, isTablet: true, isDesktop: false },
@@ -36,8 +39,9 @@ describe(`Helpers`, () => {
       );
     });
 
-    test(`when is a userAgent from a mobile device should return mobile correct object`, () => {
-      const mobileUserAgent = `Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Mobile Safari/537.36`;
+    test('when is a userAgent from a mobile device should return mobile correct object', () => {
+      const mobileUserAgent =
+        'Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Mobile Safari/537.36';
       const expectedObject = {
         userAgent: mobileUserAgent,
         devices: { isMobile: true, isTablet: false, isDesktop: false },
@@ -48,7 +52,7 @@ describe(`Helpers`, () => {
       );
     });
 
-    test(`when userAgent prop is falsy should return mobile state`, () => {
+    test('when userAgent prop is falsy should return mobile state', () => {
       const expectedObject = {
         userAgent: undefined,
         devices: { isMobile: true, isTablet: false, isDesktop: false },
