@@ -1,0 +1,11 @@
+.listProductsWrapper {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.listProductsDivider {
+  width: calc(100% - 3.2rem);
+  border: 0.1rem solid var(--gray-1);
+  margin: auto;
+}

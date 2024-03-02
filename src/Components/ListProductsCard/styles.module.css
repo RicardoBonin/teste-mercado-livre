@@ -1,0 +1,53 @@
+.listProductCardLink {
+  color: var(--gray-4);
+}
+
+.listProductCardWrapper {
+  padding: 1.6rem;
+  display: flex;
+}
+
+.listProductCardImage {
+  border-radius: 0.4rem;
+}
+
+.listProductCardContent {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.listProductCardHeader {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.listProductCardPrice {
+  font-size: 2.4rem;
+}
+
+.listProductCardTitle {
+  font-size: 1.8rem;
+  margin-top: 3.2rem;
+  max-width: 40rem;
+}
+
+.listProductCardCity {
+  font-size: 1.2rem;
+  color: var(--gray-3);
+}
+
+.listProductCard {
+  font-size: 1.8rem;
+}
+
+@media (min-width: 768px) {
+  .listProductCardWrapper {
+    gap: 1.6rem;
+  }
+
+  .listProductCardImage {
+    width: 18rem;
+  }
+}

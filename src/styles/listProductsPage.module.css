@@ -1,0 +1,10 @@
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 1136px) {
+  .main {
+    padding: 0rem calc(50% - 56.8rem);
+  }
+}

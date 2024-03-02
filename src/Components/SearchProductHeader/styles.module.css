@@ -1,0 +1,6 @@
+.searchProductHeaderWrapper {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  max-width: 100rem;
+}
