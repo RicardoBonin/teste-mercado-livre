@@ -1,53 +1,18 @@
-import { Attribute } from './attributes';
-import { Tags } from './generics';
-import { PictureProps } from './pictures';
-import { SellerAddressProps } from './sellerAddress';
-import { ShippingProps } from './shipping';
+import { AuthorProps } from './author';
+import { PriceProps } from './price';
+
+export interface ProductItemProps {
+  id: string;
+  title: string;
+  price: PriceProps;
+  picture: string;
+  condition: string;
+  freeShipping: boolean;
+  soldQuantity?: number;
+  description?: string;
+}
 
 export interface ProductProps {
-  id: string;
-  siteId: string;
-  title: string;
-  sellerId: 229233911;
-  categoryId: string;
-  officialStoreId: null;
-  price: number;
-  basePrice: number;
-  originalPrice: null;
-  currencyId: string;
-  initialQuantity: number;
-  saleTerms: [];
-  buyingMode: string;
-  listingTypeId: string;
-  condition: string;
-  permalink: string;
-  thumbnailId: string;
-  thumbnail: string;
-  pictures: PictureProps[];
-  videoId: null;
-  descriptions: [];
-  acceptsMercadopago: true;
-  nonMercadoPagoPaymentMethods: [];
-  shipping: ShippingProps;
-  internationalDeliveryMode: string;
-  sellerAddress: SellerAddressProps;
-  sellerContact: null;
-  // location: {};
-  coverageAreas: [];
-  attributes: Attribute[];
-  listingSource: string;
-  variations: [];
-  status: string;
-  subStatus: [];
-  tags: Tags;
-  warranty: null;
-  catalogProductId: string;
-  domainId: string;
-  parentItemId: null;
-  dealIds: [];
-  automaticRelist: false;
-  dateCreated: string;
-  lastUpdated: string;
-  health: null;
-  catalogListing: true;
+  author: AuthorProps;
+  item: ProductItemProps;
 }

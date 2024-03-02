@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { camelizeKeys } from 'humps';
 
 import styles from '@/styles/page.module.css';
-import { ProductProps } from '@/types/product';
+import { ProductPageProps } from '@/types/pages/ProductPage';
 
 export const metadata: Metadata = {
   title: 'Mercado Livre',
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default async function Page({ params }: { params: { id: string } }) {
   const { id } = params;
-  console.log(id);
+
   const responseProduct = await fetch(
     `${process.env.API_ENDPOINT}/items/${id}`,
     {
@@ -28,13 +28,15 @@ export default async function Page({ params }: { params: { id: string } }) {
   }
 
   const dataProduct = await responseProduct?.json();
-  const productCamelized = camelizeKeys(dataProduct) as unknown as ProductProps;
+  const productCamelized = camelizeKeys(
+    dataProduct,
+  ) as unknown as ProductPageProps;
   console.log('developmentsCamelized :>> ', productCamelized);
 
   return (
     <main className={styles.main}>
       <h1>Produto</h1>
-      <p>{productCamelized?.title}</p>
+      <p>{productCamelized?.results?.item?.title}</p>
     </main>
   );
 }
