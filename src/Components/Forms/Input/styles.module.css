@@ -6,3 +6,9 @@
   width: 100%;
   color: var(--gray-4);
 }
+
+@media (min-width: 1024px) {
+  .input {
+    font-size: 1.8rem;
+  }
+}

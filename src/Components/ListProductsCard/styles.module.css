@@ -19,8 +19,9 @@
 
 .listProductCardHeader {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  width: 80%;
+  width: 85%;
 }
 
 .listProductCardPrice {
@@ -29,8 +30,13 @@
 
 .listProductCardTitle {
   font-size: 1.8rem;
-  margin-top: 3.2rem;
+  margin-top: 1.6rem;
   max-width: 40rem;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .listProductCardCity {
@@ -42,12 +48,28 @@
   font-size: 1.8rem;
 }
 
+.listProductCardShippingSpan {
+  margin-left: 0.4rem;
+}
+
+@media (min-width: 425px) {
+  .listProductCardHeader {
+    flex-direction: row;
+  }
+}
+
 @media (min-width: 768px) {
   .listProductCardWrapper {
     gap: 1.6rem;
   }
 
+  .listProductCardTitle {
+    margin-top: 3.2rem;
+  }
+
   .listProductCardImage {
     width: 18rem;
+    min-width: 18rem;
+    height: 18rem;
   }
 }

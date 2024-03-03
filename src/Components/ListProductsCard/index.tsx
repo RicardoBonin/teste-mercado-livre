@@ -29,10 +29,18 @@ function ListProductsCard({ product }: ListProductsCardProps) {
                 currency: product?.price?.currency,
                 minimumFractionDigits: 0,
               })}
+              {product?.freeShipping && (
+                <span className={styles.listProductCardShippingSpan}>
+                  <Image
+                    src="/assets/ic_shipping.png"
+                    width={15}
+                    height={15}
+                    alt={`Imagem do produto: ${product?.title}`}
+                  />
+                </span>
+              )}
             </p>
-            <p className={styles.listProductCardCity}>
-              {product?.price?.amount}
-            </p>
+            <p className={styles.listProductCardCity}>{product?.seller}</p>
           </header>
           <h2 className={styles.listProductCardTitle}>{product?.title}</h2>
         </div>

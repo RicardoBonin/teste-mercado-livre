@@ -10,6 +10,7 @@ export interface ProductItemProps {
   freeShipping: boolean;
   soldQuantity?: number;
   description?: string;
+  seller?: string;
 }
 
 export interface ProductProps {
