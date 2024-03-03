@@ -14,7 +14,7 @@ function Header() {
       <Link href="/">
         <Image
           src="/assets/logo.png"
-          width={64}
+          width={54}
           height={32}
           alt="Logo do mercado livre"
         />
