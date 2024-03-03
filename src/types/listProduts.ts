@@ -10,5 +10,6 @@ export type ItemListProduct = Omit<
 
 export interface ProductsProps {
   author: AuthorProps;
+  categories: string[];
   items: ListProducts;
 }
