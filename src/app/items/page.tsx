@@ -2,9 +2,9 @@ import { Metadata } from 'next';
 import { camelizeKeys } from 'humps';
 
 import { ListProductsPageProps } from '@/types/pages/listProductsPage';
-import styles from '@/styles/listProductsPage.module.css';
 import ListProducts from '@/Components/Sections/ListProducts';
 import Breadcrumb from '@/Components/Breadcrumb';
+import Main from '@/Components/Main';
 
 export const metadata: Metadata = {
   title: 'Mercardo Livre',
@@ -28,8 +28,9 @@ export default async function Page({
   );
 
   if (!responseProduct.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error('Failed to fetch data');
+    return {
+      notFound: true,
+    };
   }
 
   const dataProduct = await responseProduct?.json();
@@ -37,11 +38,12 @@ export default async function Page({
     dataProduct,
   ) as unknown as ListProductsPageProps;
   const listProducts = productCamelized?.results?.items;
+  const categories = productCamelized?.results?.categories;
 
   return (
-    <main className={styles.main}>
-      <Breadcrumb />
+    <Main>
+      <Breadcrumb categories={categories} />
       <ListProducts listProducts={listProducts} />
-    </main>
+    </Main>
   );
 }

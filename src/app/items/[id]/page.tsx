@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 import { camelizeKeys } from 'humps';
 
-import styles from '@/styles/page.module.css';
 import { ProductPageProps } from '@/types/pages/ProductPage';
+import Main from '@/Components/Main';
 
 export const metadata: Metadata = {
   title: 'Mercado Livre',
@@ -31,12 +31,11 @@ export default async function Page({ params }: { params: { id: string } }) {
   const productCamelized = camelizeKeys(
     dataProduct,
   ) as unknown as ProductPageProps;
-  console.log('developmentsCamelized :>> ', productCamelized);
 
   return (
-    <main className={styles.main}>
+    <Main>
       <h1>Produto</h1>
       <p>{productCamelized?.results?.item?.title}</p>
-    </main>
+    </Main>
   );
 }
