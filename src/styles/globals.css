@@ -1,11 +1,10 @@
 :root {
-  --gray-24: #c8cacd;
-  --gray-40: #a3a6ab;
-  --gray-64: #6c7179;
-  --gray-80: #474d57;
-  --gray-85: #555555;
-  --gray-90: #393939;
-  --gray-100: #19212d;
+  --yellow: #ffe600;
+  --blue: #3483fa;
+  --gray-1: #eeeeee;
+  --gray-2: #999999;
+  --gray-3: #666666;
+  --gray-4: #333333;
 }
 
 *,
@@ -16,7 +15,7 @@
 
 html {
   font-size: 62.5%;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-inter);
   color: var(--text);
 }
 
@@ -28,6 +27,7 @@ body {
 html,
 body {
   scroll-behavior: smooth;
+  background: var(--gray-1);
 }
 
 html,
@@ -82,7 +82,7 @@ select,
 textarea {
   margin: 0;
   padding: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-inter);
 }
 
 img,

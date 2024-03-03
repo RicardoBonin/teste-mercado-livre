@@ -1,6 +1,13 @@
-import styles from './page.module.css';
+import { Metadata } from 'next';
 
-export default function Home() {
+import styles from '@/styles/page.module.css';
+
+export const metadata: Metadata = {
+  title: 'Mercardo Livre',
+  description: 'Mercardo Livre | O maior portal de vendas do brasil.',
+};
+
+export default async function Page() {
   return (
     <main className={styles.main}>
       <h1>Olá mundo</h1>

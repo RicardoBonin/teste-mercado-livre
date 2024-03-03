@@ -1,0 +1,14 @@
+.input {
+  border: none;
+  padding: 1rem;
+  font-size: 1.6rem;
+  border-radius: 0.4rem 0 0 0.4rem;
+  width: 100%;
+  color: var(--gray-4);
+}
+
+@media (min-width: 1024px) {
+  .input {
+    font-size: 1.8rem;
+  }
+}

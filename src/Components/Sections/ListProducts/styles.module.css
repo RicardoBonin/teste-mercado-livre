@@ -1,0 +1,19 @@
+.listProductsWrapper {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3.2rem;
+}
+
+.listProductsDivider {
+  width: calc(100% - 3.2rem);
+  border: 0.1rem solid var(--gray-1);
+  margin: auto;
+}
+
+@media (min-width: 1136px) {
+  .listProductsWrapper {
+    border-radius: 0.4rem;
+    margin-bottom: 14rem;
+  }
+}

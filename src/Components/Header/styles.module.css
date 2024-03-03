@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  padding: 0.8rem 1rem;
+  gap: 1rem;
+  background: var(--yellow);
+  align-items: center;
+}
+
+@media (min-width: 1136px) {
+  .header {
+    padding: 0.8rem calc(50% - 56.8rem);
+    gap: 2rem;
+  }
+}

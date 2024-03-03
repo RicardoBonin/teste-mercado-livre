@@ -1,0 +1,39 @@
+.breadcrumbWrapper {
+  display: flex;
+  padding: 1.6rem 1rem;
+}
+
+.breadcrumbItemWrapper {
+  display: flex;
+}
+
+.breadcrumbItem {
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  color: var(--gray-3);
+}
+
+.breadcrumbLastItem {
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.breadcrumbItemMap {
+  display: none;
+}
+
+.arrowIcon {
+  color: var(--gray-3);
+  margin: 0 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .breadcrumbWrapper {
+    padding: 1.6rem 0;
+  }
+
+  .breadcrumbItemMap {
+    display: flex;
+  }
+}
