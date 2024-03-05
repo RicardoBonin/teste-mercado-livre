@@ -14,13 +14,17 @@
   color: var(--gray-3);
 }
 
+.breadcrumbItemMap {
+  display: none;
+}
+
 .breadcrumbLastItem {
   font-weight: 700;
   text-transform: capitalize;
 }
 
-.breadcrumbItemMap {
-  display: none;
+.breadcrumbMapLastItem {
+  display: flex;
 }
 
 .arrowIcon {
@@ -34,6 +38,10 @@
   }
 
   .breadcrumbItemMap {
+    display: flex;
+  }
+
+  .breadcrumbLastItem {
     display: flex;
   }
 }
