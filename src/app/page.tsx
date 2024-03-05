@@ -8,9 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default async function Page() {
-  return (
-    <main className={styles.main}>
-      <h1>Olá mundo</h1>
-    </main>
-  );
+  return <main className={styles.main} />;
 }
