@@ -1,0 +1,26 @@
+.productDetailsTitleWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  padding: 1.6rem 0;
+  grid-area: title;
+}
+
+.productDetailsTitleH1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--gray-4);
+}
+
+.productDetailsTitleParagraph {
+  display: flex;
+  font-size: 1.4rem;
+  color: var(--gray-4);
+  gap: 0.4rem;
+}
+
+@media (min-width: 1024px) {
+  .productDetailsTitleWrapper {
+    padding: 0;
+  }
+}

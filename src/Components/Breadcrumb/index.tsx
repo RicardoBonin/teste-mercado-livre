@@ -15,17 +15,22 @@ interface BreadcrumbsProps {
 function Breadcrumb({ categories }: BreadcrumbsProps) {
   const searchParams = useSearchParams();
   const search = searchParams.get('search') as string;
-  const cleanCategories = [...new Set(categories.concat(search))];
+  const cleanCategories = [...new Set(categories?.concat(search))]?.filter(
+    Boolean,
+  );
 
   return (
     <nav className={styles.breadcrumbWrapper}>
       <Link className={styles.breadcrumbItem} href="/">
-        Início
+        Inicio
       </Link>
       {cleanCategories?.map((category, index) => (
         <div
           key={category}
-          className={cn(styles.breadcrumbItem, styles.breadcrumbItemMap)}
+          className={cn(styles.breadcrumbItem, styles.breadcrumbItemMap, {
+            [styles.breadcrumbMapLastItem]:
+              index === cleanCategories.length - 1,
+          })}
         >
           <AiOutlineRight className={styles.arrowIcon} />
           <Link

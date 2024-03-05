@@ -1,6 +1,10 @@
 import { cleanup } from '@testing-library/react';
 
-import { getUserAgentReduxState, objectToQueryString } from '../helpers';
+import {
+  getUserAgentReduxState,
+  objectToQueryString,
+  pluralParser,
+} from '../helpers';
 
 describe('Helpers', () => {
   afterAll(() => {
@@ -100,5 +104,40 @@ describe('Helpers', () => {
       const queryString = objectToQueryString(obj);
       expect(queryString).toEqual('number=42&value=3.14');
     });
+  });
+});
+
+describe('pluralParser', () => {
+  afterAll(() => {
+    jest.clearAllMocks();
+  });
+
+  afterEach(() => {
+    cleanup();
+    jest.resetAllMocks();
+  });
+
+  it('When total is equal 1 and cont true', () => {
+    expect(pluralParser(1, 'test')).toBe('1 test');
+  });
+
+  it('When total is equal 1 and cont false', () => {
+    expect(pluralParser(1, 'test', false)).toBe('test');
+  });
+
+  it('When total is greater than 1 and cont true', () => {
+    expect(pluralParser(2, 'test')).toBe('2 tests');
+  });
+
+  it('When total is greater than 1 and cont false', () => {
+    expect(pluralParser(2, 'test', false)).toBe('tests');
+  });
+
+  it('When total is equal 0 and cont true', () => {
+    expect(pluralParser(0, 'test', true)).toBe('0 tests');
+  });
+
+  it('When total is equal 0 and cont false', () => {
+    expect(pluralParser(0, 'test', false)).toBe('tests');
   });
 });

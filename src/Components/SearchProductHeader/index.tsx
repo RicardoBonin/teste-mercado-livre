@@ -33,6 +33,7 @@ function SearchProductHeader() {
         placeholder="Nunca dejes de buscar"
         value={value}
       />
+
       <LinkSearchHeader value={value} />
     </div>
   );

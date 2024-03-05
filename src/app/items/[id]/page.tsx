@@ -3,6 +3,9 @@ import { camelizeKeys } from 'humps';
 
 import { ProductPageProps } from '@/types/pages/ProductPage';
 import Main from '@/Components/Main';
+import Breadcrumb from '@/Components/Breadcrumb';
+import ProductDetails from '@/Components/Sections/ProductDetails';
+import ProductDescription from '@/Components/Sections/ProductDescription';
 
 export const metadata: Metadata = {
   title: 'Mercado Livre',
@@ -31,11 +34,14 @@ export default async function Page({ params }: { params: { id: string } }) {
   const productCamelized = camelizeKeys(
     dataProduct,
   ) as unknown as ProductPageProps;
+  const categories = productCamelized?.results?.categories;
+  const product = productCamelized?.results?.item;
 
   return (
     <Main>
-      <h1>Produto</h1>
-      <p>{productCamelized?.results?.item?.title}</p>
+      <Breadcrumb categories={categories} />
+      <ProductDetails product={product} />
+      <ProductDescription product={product} />
     </Main>
   );
 }

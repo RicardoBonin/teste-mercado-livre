@@ -10,10 +10,11 @@ export interface ProductItemProps {
   freeShipping: boolean;
   soldQuantity?: number;
   description?: string;
-  seller?: string;
+  city?: string;
 }
 
 export interface ProductProps {
   author: AuthorProps;
+  categories: string[];
   item: ProductItemProps;
 }

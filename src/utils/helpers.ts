@@ -1,3 +1,5 @@
+import { PriceProps } from '@/types/price';
+
 interface QueryObject {
   [key: string]: string | number | boolean;
 }
@@ -35,3 +37,34 @@ export const objectToQueryString = (obj: QueryObject) =>
         `${encodeURIComponent(key)}=${encodeURIComponent(value.toString())}`,
     )
     .join('&');
+
+export const pluralParser = (
+  total: number | string | undefined,
+  string: string,
+  cont = true,
+) => {
+  if (total === 0 && cont) {
+    return `0 ${string}s`;
+  }
+
+  if (total === 1 && cont) {
+    return `1 ${string}`;
+  }
+
+  if (total === 0 && !cont) {
+    return `${string}s`;
+  }
+
+  if (total === 1 && !cont) {
+    return `${string}`;
+  }
+
+  return cont ? `${total} ${string}s` : `${string}s`;
+};
+
+export const priceParser = (price: PriceProps | undefined) =>
+  price?.amount?.toLocaleString('es-AR', {
+    style: 'currency',
+    currency: price?.currency,
+    minimumFractionDigits: price?.decimals || 0,
+  });

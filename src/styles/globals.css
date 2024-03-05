@@ -15,7 +15,7 @@
 
 html {
   font-size: 62.5%;
-  font-family: var(--font-inter);
+  font-family: var(--font-roboto);
   color: var(--text);
 }
 
@@ -82,7 +82,7 @@ select,
 textarea {
   margin: 0;
   padding: 0;
-  font-family: var(--font-inter);
+  font-family: var(--font-roboto);
 }
 
 img,

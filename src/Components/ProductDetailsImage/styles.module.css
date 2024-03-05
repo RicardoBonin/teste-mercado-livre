@@ -1,0 +1,13 @@
+.productDetailsImageWrapper {
+  grid-area: image;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.productDetailsImage {
+  object-fit: contain;
+  max-height: 46.8rem;
+  max-width: 68rem;
+}

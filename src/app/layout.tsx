@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Roboto } from 'next/font/google';
 import { headers } from 'next/headers';
 
 import { getUserAgentReduxState } from '@/utils/helpers';
@@ -7,11 +7,11 @@ import Providers from '@/Components/Provider';
 import '@/styles/globals.css';
 import Header from '@/Components/Header';
 
-const inter = Inter({
+const roboto = Roboto({
   subsets: ['latin'],
-  weight: 'variable',
+  weight: ['100', '300', '400', '500', '700', '900'],
   display: 'swap',
-  variable: '--font-inter',
+  variable: '--font-roboto',
   preload: true,
 });
 
@@ -32,7 +32,7 @@ export default function RootLayout({
   return (
     <Providers userAgent={userAgentToDispatch}>
       <html lang="pt">
-        <body className={inter.className}>
+        <body className={roboto.className}>
           <Header />
           {children}
         </body>

@@ -19,6 +19,7 @@ function Header() {
           alt="Logo do mercado livre"
         />
       </Link>
+
       <SearchProductHeader />
     </header>
   );
