@@ -1,0 +1,34 @@
+.productDetailsPriceWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  padding: 1.6rem 0;
+  grid-area: price;
+}
+
+.productDetailsPriceTitle {
+  font-size: 2.4rem;
+  font-weight: 500;
+  color: var(--gray-4);
+}
+
+.productDetailsButton {
+  border-radius: 0.4rem;
+  color: #fff;
+  background-color: var(--blue);
+  padding: 1rem;
+  border: none;
+  width: 100%;
+  font-size: 1.6rem;
+  transition: all 0.2s;
+}
+
+.productDetailsButton:hover {
+  background-color: #3483facc;
+}
+
+@media (min-width: 768px) {
+  .productDetailsPriceWrapper {
+    padding: 3.2rem 0;
+  }
+}
