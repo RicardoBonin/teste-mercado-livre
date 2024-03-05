@@ -1,0 +1,40 @@
+.productDescriptionWrapper {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  margin-bottom: 3.2rem;
+  padding: 3.2rem 1.6rem;
+}
+
+.productDescriptionTitle {
+  font-size: 2.8rem;
+  color: var(--gray-4);
+}
+
+.productDescriptionParagraph {
+  font-size: 1.6rem;
+  color: var(--gray-2);
+}
+
+@media (min-width: 700px) {
+  .productDescriptionWrapper {
+    padding: 1.6rem calc(50% - 30rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .productDescriptionWrapper {
+    padding: 3.2rem;
+  }
+
+  .productDescriptionParagraph {
+    max-width: 79.6rem;
+  }
+}
+
+@media (min-width: 1136px) {
+  .productDescriptionWrapper {
+    border-radius: 0 0 0.4rem 0.4rem;
+  }
+}
