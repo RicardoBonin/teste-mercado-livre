@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import { ItemListProduct } from '@/types/listProduts';
+import { priceParser } from '@/utils/helpers';
 
 import styles from './styles.module.css';
 
@@ -21,14 +22,12 @@ function ListProductsCard({ product }: ListProductsCardProps) {
           height={180}
           alt={`Imagem do produto: ${product?.title}`}
         />
+
         <div className={styles.listProductCardContent}>
           <header className={styles.listProductCardHeader}>
             <p className={styles.listProductCardPrice}>
-              {product?.price?.amount?.toLocaleString('es-AR', {
-                style: 'currency',
-                currency: product?.price?.currency,
-                minimumFractionDigits: 0,
-              })}
+              {priceParser(product?.price)}
+
               {product?.freeShipping && (
                 <span className={styles.listProductCardShippingSpan}>
                   <Image
@@ -40,8 +39,12 @@ function ListProductsCard({ product }: ListProductsCardProps) {
                 </span>
               )}
             </p>
-            <p className={styles.listProductCardCity}>{product?.seller}</p>
+
+            {product?.city && (
+              <p className={styles.listProductCardCity}>{product?.city}</p>
+            )}
           </header>
+
           <h2 className={styles.listProductCardTitle}>{product?.title}</h2>
         </div>
       </article>
