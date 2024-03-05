@@ -8,5 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default async function Page() {
-  return <main className={styles.main} />;
+  return <main data-testid="main" className={styles.main} />;
 }

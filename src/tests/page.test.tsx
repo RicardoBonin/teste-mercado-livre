@@ -2,7 +2,7 @@ import { render, screen, cleanup } from '@testing-library/react';
 
 import Home from '@/app/page';
 
-describe('PAge', () => {
+describe('Page home', () => {
   afterAll(() => {
     jest.clearAllMocks();
   });
@@ -12,7 +12,7 @@ describe('PAge', () => {
     jest.resetAllMocks();
   });
 
-  test('Page', async () => {
+  test('Should render a tag main', async () => {
     const globalRef: any = global;
     globalRef.fetch = jest.fn(() =>
       Promise.resolve({
@@ -22,6 +22,6 @@ describe('PAge', () => {
     );
     render(await Home());
 
-    expect(screen.getByText('Olá mundo')).toBeInTheDocument();
+    expect(screen.getByTestId('main')).toBeInTheDocument();
   });
 });
