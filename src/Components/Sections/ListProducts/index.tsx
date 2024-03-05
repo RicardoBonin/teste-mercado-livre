@@ -1,4 +1,4 @@
-import React from 'react';
+import { memo } from 'react';
 
 import { ListProducts } from '@/types/listProduts';
 import ListProductsCard from '@/Components/ListProductsCard';
@@ -10,6 +10,16 @@ interface ListProductsProps {
 }
 
 function ListProducts({ listProducts }: ListProductsProps) {
+  if (listProducts?.length < 1) {
+    return (
+      <section className={styles.listProductsEmpty}>
+        <h1 className={styles.listProductsEmptyTitle}>
+          No se encontraron productos. Por favor haz una búsqueda.
+        </h1>
+      </section>
+    );
+  }
+
   return (
     <section className={styles.listProductsWrapper}>
       {!!listProducts?.length &&
@@ -19,6 +29,7 @@ function ListProducts({ listProducts }: ListProductsProps) {
               key={`${product?.id}-${product?.title}`}
               product={product}
             />
+
             {index < listProducts.length - 1 && (
               <hr className={styles.listProductsDivider} />
             )}
@@ -28,4 +39,4 @@ function ListProducts({ listProducts }: ListProductsProps) {
   );
 }
 
-export default React.memo(ListProducts);
+export default memo(ListProducts);
