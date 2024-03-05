@@ -1,0 +1,32 @@
+.productDetailsWrapper {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 1.6rem;
+}
+
+@media (min-width: 700px) {
+  .productDetailsWrapper {
+    padding: 1.6rem calc(50% - 30rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .productDetailsWrapper {
+    display: grid;
+    padding: 3.2rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 0.5fr);
+    grid-template-areas:
+      'image image image title'
+      'image image image price'
+      'image image image price';
+    column-gap: 3.2rem;
+  }
+}
+
+@media (min-width: 1136px) {
+  .productDetailsWrapper {
+    border-radius: 0.4rem 0.4rem 0 0;
+  }
+}
