@@ -1,6 +1,7 @@
 import { memo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import classNames from 'classnames';
 
 import styles from './styles.module.css';
 
@@ -11,7 +12,9 @@ interface LinkSearchHeaderProps {
 function LinkSearchHeader({ value }: LinkSearchHeaderProps) {
   return (
     <Link
-      className={styles.linkSearchHeader}
+      className={classNames(styles.linkSearchHeader, {
+        [styles.inputDisable]: !value,
+      })}
       href={`/items?search=${encodeURIComponent(value)}`}
     >
       <Image
