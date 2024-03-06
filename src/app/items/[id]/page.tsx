@@ -8,8 +8,9 @@ import ProductDetails from '@/Components/Sections/ProductDetails';
 import ProductDescription from '@/Components/Sections/ProductDescription';
 
 export const metadata: Metadata = {
-  title: 'Mercado Livre',
-  description: 'Mercado Livre | O maior portal de vendas da America latina.',
+  title: 'Mercado Libre Argentina - Envíos Gratis en el día',
+  description:
+    'Comprá productos con Envío Gratis en el día en Mercado Libre Argentina. Encontrá miles de marcas y productos a precios increíbles.',
 };
 
 export default async function Page({ params }: { params: { id: string } }) {
