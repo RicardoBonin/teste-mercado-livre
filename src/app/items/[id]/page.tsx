@@ -27,7 +27,9 @@ export default async function Page({ params }: { params: { id: string } }) {
   );
 
   if (!responseProduct.ok) {
-    throw new Error('Failed to fetch data');
+    return {
+      notFound: true,
+    };
   }
 
   const dataProduct = await responseProduct?.json();
