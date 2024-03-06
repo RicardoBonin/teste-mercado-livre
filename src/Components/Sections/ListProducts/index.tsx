@@ -1,12 +1,12 @@
 import { memo } from 'react';
 
-import { ListProducts } from '@/types/listProduts';
+import { ListProductsType } from '@/types/listProduts';
 import ListProductsCard from '@/Components/ListProductsCard';
 
 import styles from './styles.module.css';
 
 interface ListProductsProps {
-  listProducts: ListProducts;
+  listProducts: ListProductsType;
 }
 
 function ListProducts({ listProducts }: ListProductsProps) {

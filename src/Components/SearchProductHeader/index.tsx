@@ -9,8 +9,8 @@ import styles from './styles.module.css';
 function SearchProductHeader() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const search = searchParams.get('search') as string;
-  const [value, setValue] = useState(search);
+  const search = searchParams?.get('search') as string;
+  const [value, setValue] = useState(search || '');
   const handlerChange = (event: ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
   };

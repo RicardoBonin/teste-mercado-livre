@@ -3,12 +3,13 @@ import { camelizeKeys } from 'humps';
 
 import { ListProductsPageProps } from '@/types/pages/listProductsPage';
 import ListProducts from '@/Components/Sections/ListProducts';
-import Breadcrumb from '@/Components/Breadcrumb';
 import Main from '@/Components/Main';
+import Breadcrumb from '@/Components/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Mercardo Livre',
-  description: 'Mercardo Livre | O maior portal de vendas do brasil.',
+  title: 'Mercado Libre Argentina - Envíos Gratis en el día',
+  description:
+    'Comprá productos con Envío Gratis en el día en Mercado Libre Argentina. Encontrá miles de marcas y productos a precios increíbles.',
 };
 
 export default async function Page({
@@ -17,7 +18,7 @@ export default async function Page({
   searchParams: { [x: string]: string };
 }) {
   const responseProduct = await fetch(
-    `${process.env.API_ENDPOINT}/items?search=${searchParams.search}`,
+    `${process.env.API_ENDPOINT}/items?q=${searchParams.search}`,
     {
       cache: 'no-store',
       headers: {
