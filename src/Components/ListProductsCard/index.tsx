@@ -35,7 +35,7 @@ function ListProductsCard({ product }: ListProductsCardProps) {
                     src="/assets/ic_shipping.png"
                     width={15}
                     height={15}
-                    alt={`Imagem do produto: ${product?.title}`}
+                    alt="Icon de frete gratis"
                   />
                 </span>
               )}
@@ -49,6 +49,23 @@ function ListProductsCard({ product }: ListProductsCardProps) {
           <h2 className={styles.listProductCardTitle}>{product?.title}</h2>
         </div>
       </article>
+      <script
+        data-testid="script"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'http://schema.org',
+            '@graph': [
+              {
+                '@type': 'SearchResultsPage',
+                name: `${product?.title}`,
+                about:
+                  'Envíos Gratis en el día ✓ Comprá Iphone Usados en cuotas sin interés! Conocé nuestras increíbles ofertas y promociones en millones de productos.',
+              },
+            ],
+          }),
+        }}
+      />
     </Link>
   );
 }

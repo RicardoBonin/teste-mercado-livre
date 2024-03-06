@@ -8,6 +8,12 @@
 
 .productDetailsImage {
   object-fit: contain;
-  max-height: 46.8rem;
+  max-height: 26.8rem;
   max-width: 68rem;
+}
+
+@media (min-width: 1136px) {
+  .productDetailsImage {
+    min-height: 46.8rem;
+  }
 }

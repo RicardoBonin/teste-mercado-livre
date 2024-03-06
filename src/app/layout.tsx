@@ -32,6 +32,26 @@ export default function RootLayout({
   return (
     <Providers userAgent={userAgentToDispatch}>
       <html lang="pt">
+        <head>
+          <meta
+            name="image"
+            content="https://http2.mlstatic.com/static/org-img/homesnw/mercado-libre.png?v=2"
+          />
+
+          <meta
+            property="og:image"
+            content="https://http2.mlstatic.com/static/org-img/homesnw/mercado-libre.png?v=2"
+            data-head-react="true"
+          />
+          <meta
+            property="og:image:secure_url"
+            content="https://http2.mlstatic.com/static/org-img/homesnw/mercado-libre.png?v=2"
+          />
+          <meta property="og:image:alt" content="Thumbnail" />
+          <meta property="og:image:type" content="image/png" />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="630" />
+        </head>
         <body className={roboto.className}>
           <Header />
           {children}

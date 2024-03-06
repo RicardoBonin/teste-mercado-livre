@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Mercado Livre APP
 
-## Getting Started
+## Description
 
-First, run the development server:
+This is a technical challenge that will assess the candidate's React development skills by creating a web application to list and display product details consuming two distinct APIs.
+
+### Instructions:
+
+1. Use React to develop the application.
+2. The APP has three pages: the home page with only the header, one to list all products, and another to display the details of a specific product.
+
+## Clone and Install Repository Dependencies
+
+You need to **verify if your development environment is following the following parameters**:
+
+1. Have `Node.js` version `v20.11.0`;
+   - It is recommended to install via the `Node.js` manager, [NVM](https://github.com/nvm-sh/nvm)
+2. Have `Yarn` version `1.22.17`.
+   - [Tip to change `Yarn` version if you already have it installed](https://yarnpkg.com/cli/set/version)
+
+If meeting these criteria, just follow these steps to clone and run the project:
+
+1. Clone the repository and enter its folder:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone git@github.com:RicardoBonin/teste-mercado-livre.git && cd teste-mercado-livre
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Run the following command to install project dependencies:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+yarn
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+3. Finally, run the command below to open the local `preview` of the project:
 
-## Learn More
+```bash
+yarn dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Unit Tests
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The project has some unit tests, Jest and React Testing Library were used to perform interface tests.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+To run them, simply run the following command:
 
-## Deploy on Vercel
+```bash
+yarn test
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Conventional Commits Pattern
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+We use the Conventional Commits Pattern as the commit standard. It's not possible to make commits without this pattern. We use Husky to enforce this control.
+
+Here is the link with the patterns:
+
+[Conventional Commits Pattern](https://medium.com/linkapi-solutions/conventional-commits-pattern-3778d1a1e657)
+
+# Pages
+
+- https://teste-mercado-livre.vercel.app/
+- https://teste-mercado-livre.vercel.app/items?search=iphone
+- https://teste-mercado-livre.vercel.app/items/MLA1392778159
+
+# API routes
+
+- https://teste-mercado-livre.vercel.app/api/items/MLA1379378617
+- https://teste-mercado-livre.vercel.app/api/items?q=apple
+
+### Responsiveness
+
+We maintain responsiveness for devices from 360px onwards.
+
+### Hosting
+
+Vercel was used as the hosting for the app. Below are the app links:
+
+### CI/CD
+
+A pipeline was also added to the app that checks for any lint, test, and TypeScript problems before merging to the main branch. If there are any problems, the merge is blocked.

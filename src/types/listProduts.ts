@@ -1,7 +1,7 @@
 import { AuthorProps } from './author';
 import { ProductItemProps } from './product';
 
-export type ListProducts = ItemListProduct[];
+export type ListProductsType = ItemListProduct[];
 
 export type ItemListProduct = Omit<
   ProductItemProps,
@@ -11,5 +11,5 @@ export type ItemListProduct = Omit<
 export interface ProductsProps {
   author: AuthorProps;
   categories: string[];
-  items: ListProducts;
+  items: ListProductsType;
 }

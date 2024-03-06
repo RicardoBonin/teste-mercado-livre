@@ -14,7 +14,7 @@ interface BreadcrumbsProps {
 
 function Breadcrumb({ categories }: BreadcrumbsProps) {
   const searchParams = useSearchParams();
-  const search = searchParams.get('search') as string;
+  const search = searchParams?.get('search') as string;
   const cleanCategories = [...new Set(categories?.concat(search))]?.filter(
     Boolean,
   );
@@ -26,7 +26,7 @@ function Breadcrumb({ categories }: BreadcrumbsProps) {
       </Link>
       {cleanCategories?.map((category, index) => (
         <div
-          key={category}
+          key={`${category}-${index++}`}
           className={cn(styles.breadcrumbItem, styles.breadcrumbItemMap, {
             [styles.breadcrumbMapLastItem]:
               index === cleanCategories.length - 1,
