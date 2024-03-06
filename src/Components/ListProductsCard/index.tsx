@@ -34,7 +34,7 @@ function ListProductsCard({ product }: ListProductsCardProps) {
                     src="/assets/ic_shipping.png"
                     width={15}
                     height={15}
-                    alt={`Imagem do produto: ${product?.title}`}
+                    alt="Icon de frete gratis"
                   />
                 </span>
               )}
