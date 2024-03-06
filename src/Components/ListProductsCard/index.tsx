@@ -17,6 +17,7 @@ function ListProductsCard({ product }: ListProductsCardProps) {
       <article className={styles.listProductCardWrapper}>
         <Image
           className={styles.listProductCardImage}
+          priority
           src={product?.picture}
           width={180}
           height={180}

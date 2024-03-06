@@ -17,6 +17,7 @@ function ProductDetailsImage({ picture, title }: ProductDetailsImageProps) {
         alt={`Imagem do produto ${title}`}
         width={680}
         height={300}
+        priority
       />
     </div>
   );
